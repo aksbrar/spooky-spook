@@ -1,5 +1,123 @@
+/* ============================== */
+/*         RESET STYLES           */
+/* ============================== */
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ============================== */
+/*             Body               */
+/* ============================== */
+body{
+  position: relative;
+}
+
+body::before{
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0.9;
+  background-image: url("/public/images/ghostbg.jpg");
+  background-position: center;
+}
+
+/* ============================== */
+/*         Main-container         */
+/* ============================== */
+.main-container{
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ============================== */
+/*           Typography           */
+/* ============================== */
+.heading-top > h1,
+.heading-middle > h1{
+  font-family: "Frijole", serif;
+}
+
+footer > p{
+  font-size: 1em;
+  font-weight: 700;
+}
+
+/* ============================== */
+/*            Header              */
+/* ============================== */
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 4em;
+}
+
+.head-img{
+  width: 3em;
+}
+
+.ul-container{
+  display: flex;
+  gap: 4em;
+}
+
+.list-item, .list-item > a{
+  text-decoration: none;
+  color: white;
+  list-style: none;
+}
+
+
+/* ============================== */
+/*            Middle              */
+/* ============================== */
+.content{
+  width: 100%;
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heading-top,
+.heading-middle{
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* ============================== */
+/*            Footer              */
+/* ============================== */
+
+footer{
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* ============================== */
+/*            responsive          */
+/* ============================== */
+
+@media  (max-width:700px) {
+  .header{
+    padding: 1em 1em;
+  }
 }
