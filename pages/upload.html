@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spooky Spook</title>
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../styles/upload.css">
   <link rel="icon" type="image/x-icon" href="../images/candle-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +15,7 @@
     
     
       <!-- Header -->
-      <div class="header">
+      <div class="header upload-header">
         <img src="../images/candle-logo.png" alt="logo of candle">
         <nav class="navigation">
           <ul class="ul-container">
@@ -25,6 +24,41 @@
             <li class="list-item"><a href="upload.html">Upload</a></li>
           </ul>
         </nav>
+      </div>
+
+      <!-- TOP -->
+      <div class="upload-content">
+        <div class="upload-heading-top">
+          <h1>Spooky Spook <br> <br> Add Sighting</h1>
+        </div>
+
+        <!-- middle -->
+        <form class="form-container">
+          <label class="title-label" for="title">Title</label>
+          <input class="title"
+                 placeholder="A ghosty encounter"
+                 id="title"
+                 type="text">
+
+          <label class="time-label" for="time">Time</label>
+          <input class="time"
+                 id="time"
+                 type="datetime-local">
+
+          <label class="location-label" for="location">Location</label>
+          <input class="location"
+                 placeholder="A tree behind my house..."
+                 id="location"
+                 type="text">
+
+          <label class="details-label" for="details">Details</label>
+          <textarea class="details"
+                 placeholder="A tree behind my house..."
+                 id="details"></textarea>
+
+          <button>Submit</button>
+        </form>
+
       </div>
 
       

@@ -47,7 +47,9 @@ body::before{
 /*           Typography           */
 /* ============================== */
 .heading-top > h1,
-.heading-middle > h1{
+.heading-middle > h1,
+.upload-heading-top > h1,
+label{
   font-family: "Frijole", serif;
 }
 
@@ -111,7 +113,6 @@ footer{
   text-align: center;
 }
 
-
 /* ============================== */
 /*            responsive          */
 /* ============================== */
@@ -120,4 +121,95 @@ footer{
   .header{
     padding: 1em 1em;
   }
+}
+
+
+
+/* ============================== */
+/*            Upload              */
+/* ============================== */
+.upload-header > img{
+  width: 2em;
+}
+.upload-content{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  padding: 4em;
+  flex: 1;
+}
+.form-container{
+  display: grid;
+  grid-template-columns: 100px 200px;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  grid-template-areas: 
+    "tl ti"
+    "tml tmi"
+    "ll li"
+    "dl di"
+    "bt bt";
+  
+}
+.title-label{
+  grid-area : tl;
+}
+.time-label{
+  grid-area: tml;
+}
+.location-label{
+  grid-area: ll;
+}
+.details-label{
+  grid-area: dl;
+}
+
+.title{
+  grid-area : ti;
+}
+.time{
+  grid-area: tmi;
+}
+.location{
+  grid-area: li;
+}
+.details{
+  grid-area: di;
+}
+
+button{
+  grid-area: bt;
+  padding: 1em;
+  background-color: black;
+  color: wheat;
+  border: 3px dotted white;
+}
+
+input{
+  padding: 1em;
+  border: 3px dotted black;
+}
+
+
+/* ============================== */
+/*            Read                */
+/* ============================== */
+
+.card{
+  width: 300px;
+  text-align: left;
+  margin: 0 auto;
+  border: 3px solid black;
+  padding: 1em;
+  background-color: wheat;
+  margin-bottom: 3em;
+}
+.card-time{
+  font-size: .7em;
+}
+.card-title{
+  font-size: 1.3em;
+  font-weight: 800;
 }
