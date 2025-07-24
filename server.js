@@ -1,13 +1,18 @@
 // import http
 import http from "node:http"
 
+// imports
+import serveStatic from "./utils/serveStatic.js"
+
 // port to use
 const port = 8000
 
+// cwd
+const __dirname = import.meta.dirname
+
 // create server
 const server = http.createServer((req, res) => {
-  res.setHeader("Content-Type", "text/html")
-  res.end('<html><h1>The server is working</h1></html>')
+  serveStatic(__dirname)
 })
 
 // listen to port
