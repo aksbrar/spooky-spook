@@ -1,0 +1,12 @@
+{
+  "name": "spooky-spook",
+  "version": "1.0.0",
+  "description": "website for spoky tales",
+  "license": "ISC",
+  "author": "aks",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
