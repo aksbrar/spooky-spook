@@ -1,7 +1,18 @@
 // imports
 import path from "node:path"
+import {sendRes} from "./sendResponse.js"
+import fs from "node:fs/promises"
 
-export const serveStatic = async (dir) => {
+// get path
+export const serveStatic = async (dir, res) => {
   const filePath = path.join(dir, "public", "index.html")
-  return filePath
+  readContent(filePath, res)
 }
+
+// store file with that path
+const readContent = async (path, res) => {
+  const storedBuffer = await fs.readFile(path)
+  sendRes(res, 200, "text/html",storedBuffer)
+}
+
+

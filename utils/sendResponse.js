@@ -1,6 +1,6 @@
 // function to send response
-export const sendRes = (res, statusCode, header, content) => {
+export const sendRes = (res, statusCode, conentType, content) => {
   res.statusCode = statusCode
-  res.setHeader(header)
+  res.setHeader('Content-Type', conentType)
   res.end(content)
 }
