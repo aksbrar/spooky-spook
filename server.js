@@ -13,7 +13,7 @@ const __dirname = import.meta.dirname
 // create server
 const server = http.createServer(async (req, res) => {
   // index html path
-  await serveStatic(__dirname, res)
+  await serveStatic(__dirname, res, req)
 })
 
 // listen to port
