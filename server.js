@@ -18,8 +18,10 @@ const listing = await getData(__dirname)
 
 // create server
 const server = http.createServer(async (req, res) => {
-  if(req.url.startsWith("/api") && req.method==="GET"){
-    handleGetRequest(req, res)
+  if(req.url.startsWith("/api")){
+    if (req.method==="GET"){
+      return await handleGetRequest(req, res)
+    }
   }
 
   
