@@ -1,5 +1,11 @@
 [
   {
+    "time": "25 July 2025 at 13:24",
+    "location": "Whispering Pines, USA",
+    "title": "The Midnight Echo",
+    "details": "On Halloween night, as the clock struck midnight, a mysterious echo bounced through the forest. It wasn't the wind or the owls, but a faint whisper repeating my name. I followed the sound deeper into the woods until I stumbled upon an abandoned cabin where the door creaked open by itself. Inside, the air was thick with forgotten secrets and a cold presence that made the hairs on my neck stand. Suddenly, the whisper turned into a chilling laugh, and I realized I was not alone."
+  },
+  {
     "uuid": "a9f1c6e5-9383-4d12-b28d-734c9370f861",
     "location": "Exeter, UK",
     "time": "7 Jan 2025 at 09:30",
