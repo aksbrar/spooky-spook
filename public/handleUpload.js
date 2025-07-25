@@ -10,7 +10,7 @@ const detailsInput = document.getElementById("details");
 
 // Handle form submit on upload page
 if (form) {
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
     if (
       !timeInput.value ||
@@ -39,7 +39,7 @@ if (form) {
       details: detailsInput.value.trim(),
     };
 
-    const response = fetch("/api", {
+    const response = await fetch("/api", {
       method : "POST",
       headers : {"Content-Type" : "application/json"},
       body : JSON.stringify(entry)

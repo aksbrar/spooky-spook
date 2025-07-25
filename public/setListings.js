@@ -1,7 +1,23 @@
-if (cardsContainer) {
-    // get data here
+// get data
+const getExistingData = async ()=>{
+  try  {
+    const res = await fetch("/api")
+    const data = await res.json()
+    return data
+  } catch (e){
+    console.error(e)
+  }
+}
 
-    cardsData.forEach((card) => {
+// get card container
+const cardsContainer = document.querySelector(".cards-container")
+
+// get data stored
+const data = await getExistingData()
+
+if (cardsContainer) {
+
+    data.forEach((card) => {
       const div = document.createElement("div");
       div.className = "card";
       div.innerHTML = `

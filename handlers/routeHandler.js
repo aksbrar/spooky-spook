@@ -1,5 +1,5 @@
 // imports
-import {getData} from "./utils/getData.js"
+import {getData} from "../utils/getData.js"
 import { sendRes } from "../utils/sendResponse.js"
 
 // get data
