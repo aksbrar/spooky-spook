@@ -1,6 +1,8 @@
 // imports
+import path from "node:path"
 import {getData} from "../utils/getData.js"
 import { sendRes } from "../utils/sendResponse.js"
+import fs from "node:fs/promises"
 
 // get data
 export const handleGetRequest = async (req, res) =>{
@@ -10,3 +12,33 @@ export const handleGetRequest = async (req, res) =>{
 }
 
 // post data
+export const handlePostRequest = async (req, res) =>{
+  // initiate body
+  let body = ""
+
+  // populate body
+  req.on("data", (chunk)=>{
+    body += chunk
+  })
+
+  req.on("end", ()=>{
+    try {
+      const data = JSON.parse(body)
+      sendRes(res, 200, "application/json", "data is received")
+      pushData(data)
+    } catch (e) {
+      console.log(e)
+      sendRes(res, 500, "application/json", e)
+    }
+  })
+}
+
+// push data to data.js file
+const pushData = async (dataToPass) => {
+  // read the existimg data
+  const pathToFile = path.join("data", "data.js")
+  const existingData = await getData()
+  existingData.shift(dataToPass)
+
+  fs.writeFile(pathToFile, existingData)
+}
