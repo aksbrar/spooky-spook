@@ -3,17 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form.form-container");
   // Find cards container by class (read.html)
   const cardsContainer = document.querySelector(".cards-container");
+  // form inputs
+  const timeInput = document.getElementById("time");
+  const locationInput = document.getElementById("location");
+  const titleInput = document.getElementById("title");
+  const detailsInput = document.getElementById("details"); 
+
 
   // Handle form submit on upload page
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-
-      const timeInput = document.getElementById("time");
-      const locationInput = document.getElementById("location");
-      const titleInput = document.getElementById("title");
-      const detailsInput = document.getElementById("details");
-
       if (
         !timeInput.value ||
         !locationInput.value.trim() ||
@@ -41,19 +41,17 @@ document.addEventListener("DOMContentLoaded", function () {
         details: detailsInput.value.trim(),
       };
 
-      const existing = JSON.parse(localStorage.getItem("cards") || "[]");
-      existing.push(entry);
-      localStorage.setItem("cards", JSON.stringify(existing));
+      // send data here
 
       form.reset();
 
-      window.location.href = "read.html"; // adjust path if necessary
+      window.location.href = "read.html";
     });
   }
 
   // Render cards on read page
   if (cardsContainer) {
-    const cardsData = JSON.parse(localStorage.getItem("cards") || "[]");
+    // get data here
 
     cardsData.forEach((card) => {
       const div = document.createElement("div");
