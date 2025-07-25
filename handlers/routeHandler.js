@@ -38,7 +38,11 @@ const pushData = async (dataToPass) => {
   // read the existimg data
   const pathToFile = path.join("data", "data.js")
   const existingData = await getData()
-  existingData.shift(dataToPass)
+  existingData.unshift(dataToPass)
 
-  fs.writeFile(pathToFile, existingData)
+  // stringify data
+  const stringifiedData = JSON.stringify(existingData)
+
+  // write data to file
+  await fs.writeFile(pathToFile, stringifiedData)
 }
