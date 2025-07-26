@@ -1,3 +1,6 @@
+// imports 
+import {v4 as uuidv4} from "node:uuid"
+
 // Find form by class (upload.html)
 const form = document.querySelector("form.form-container");
 
@@ -33,6 +36,7 @@ if (form) {
     });
 
     const entry = {
+      uuid : uuidv4(),
       time: formattedDate,
       location: locationInput.value.trim(),
       title: titleInput.value.trim(),
